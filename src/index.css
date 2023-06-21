@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-black: 0 0% 0%;
+  --color-light-black: 0 0% 19%;
+  --color-white: 0 0% 100%;
+
+  /* --color-blackOp: hsl(0 0% 0% / 0.5); */
+
+  --ff-inter: "Inter", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 61.5%;
+}
+h1,
+h2,
+h3,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: var(--ff-inter);
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: var(--color-black);
+  background-image: url("../public/assets/desktop/bg-image-daytime.jpg");
+  background-repeat: none;
+  background-size: cover;
+}
+
+.heading_1 {
+  font-size: 20rem;
+  line-height: 20rem;
+  letter-spacing: -5;
+}
+.heading_2 {
+  font-size: 5.6rem;
+  line-height: 6.8rem;
+}
+
+.heading_3 {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  letter-spacing: -5.8;
+  text-transform: uppercase;
+}
+
+.heading_4 {
+  font-size: 2rem;
+  line-height: 2.8rem;
+  letter-spacing: 5;
+  font-weight: 400;
+}
+
+.heading_5 {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  letter-spacing: -5;
+}
+.heading_6 {
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+  letter-spacing: 3;
+}
+
+.btn-more {
+  text-transform: uppercase;
+  color: hsl(var(--color-black) / 0.5);
+  background-color: hsl(var(--color-white));
+  border-radius: 2.8rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.8rem;
+  letter-spacing: 0.5rem;
+  padding: 0rem 1.4rem;
+  padding-left: 2rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 1.3rem; */
+  width: 15rem;
+  height: 5.7rem;
+
+  margin-top: 10rem;
+  cursor: pointer;
+  /* opacity: .5; */
+}
