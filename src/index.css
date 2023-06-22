@@ -5,8 +5,6 @@
   --color-light-black: 0 0% 19%;
   --color-white: 0 0% 100%;
 
-  /* --color-blackOp: hsl(0 0% 0% / 0.5); */
-
   --ff-inter: "Inter", sans-serif;
 }
 
@@ -40,24 +38,20 @@ body {
   font-size: 1.8rem;
   line-height: 2.8rem;
   color: hsl(var(--color-white));
-  background-image: url("../public/assets/desktop/bg-image-daytime.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .heading_1 {
   font-size: 20rem;
   line-height: 20rem;
-  letter-spacing: -5;
+  letter-spacing: -5px;
   font-weight: bold;
 }
 .heading_2 {
   font-size: 5.6rem;
   line-height: 6.8rem;
   font-weight: bold;
-  color: hsl(var(--color-light-black));
+  /* color: hsl(var(--color-light-black)); */
 }
 
 .heading_3 {
@@ -83,8 +77,8 @@ body {
 .heading_6 {
   font-size: 1.5rem;
   line-height: 2.8rem;
-  letter-spacing: 3;
-  color: hsl(var(--color-light-black));
+  letter-spacing: 3px;
+  /* color: hsl(var(--color-light-black)); */
 }
 
 .fnt-700 {
@@ -112,22 +106,34 @@ body {
   width: 15rem;
   height: 5.7rem;
   cursor: pointer;
-  /* align-self: flex-end; */
 }
 
 .container {
-  width: 100%;
-  height: 100vh;
+  margin-left: -1rem;
+  min-height: 100vh;
 }
+
+.evening {
+  background-image: url("../public/assets/desktop/bg-image-nighttime.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.morning {
+  background-image: url("../public/assets/desktop/bg-image-daytime.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .up-container {
   padding-inline: 16.5rem;
   padding-block: 6rem;
   display: flex;
-  gap: 45rem;
+  /* gap: 22rem; */
   flex-direction: column;
-  justify-content: end;
-  min-height: 50%;
-  transition: all 0.2 ease-in-out;
+  justify-content: space-between;
+  min-height: 50vh;
+  transition: all 0.2s ease-in-out;
 }
 
 .clock-container {
@@ -135,21 +141,27 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   height: 100%;
-  transition: all 0.2 ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .expand-container {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20.3871px);
-  color: hsl(var(--color-black));
-  height: 50%;
-  padding-inline: 16.5rem;
-  padding-block: 7.4rem;
-  /* width: 100vw; */
+  min-height: 50vh;
+  padding-block: 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  transition: all 0.2 ease-in-out;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+}
+
+.expand-day {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(2.3871rem);
+  color: hsl(var(--color-black));
+}
+.expand-night {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(2.3871rem);
+  color: hsl(var(--color-white));
 }
 
 .btn-svg circle {
@@ -162,18 +174,22 @@ body {
 
 .quote-container {
   transition: all 0.2 ease-in-out;
-
-  /* display: none; */
+  min-height: 45vh;
 }
 
 .quote {
   width: 48ch;
   margin-bottom: 1.3rem;
 }
+.quote-list {
+  display: flex;
+  gap: 1.6rem;
+}
 
-/* .quote-author {
-  font
-} */
+.quote-list svg {
+  transform: translateY(1rem);
+  cursor: pointer;
+}
 
 .greeting-container {
   display: flex;
@@ -181,19 +197,20 @@ body {
   gap: 1.6rem;
 }
 
-.greeting-container span {
-  margin-right: 0.5rem;
-}
-
 .time-container {
   display: flex;
   align-items: baseline;
 }
-
+.clock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
 .timezone {
   font-weight: 300;
   font-size: 4rem;
   line-height: 2.8rem;
+  margin-left: 1.1rem;
 }
 
 .expand-right,
@@ -201,22 +218,182 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4.2rem;
+  flex: 0 0 50%;
+}
+.expand-left {
+  border-right: 1px solid currentColor;
+  padding-inline: 16.5rem;
+
+  border-color: color-mix(in srgb, currentColor 25%, transparent);
+}
+.expand-right {
+  padding-inline: 9.4rem;
 }
 
-.line {
-  background-color: hsl(var(--color-light-black) / 0.25);
-  width: 1px;
-  height: 60%;
-}
 /* .expand-value {
 }
 .expand-title {
 } */
 
-@media only screen and (max-width: 57em) {
+@media only screen and (max-width: 75em) {
+  .heading_1 {
+    font-size: 17.5rem;
+    line-height: 17.5rem;
+    letter-spacing: -4.375px;
+  }
+  .heading_2 {
+    font-size: 4rem;
+    line-height: 4.8rem;
+  }
+  .up-container {
+    padding-inline: 9.4rem;
+  }
+
+  .expand-left,
+  .expand-right {
+    border: none;
+    justify-content: center;
+    padding-inline: 9.4rem;
+  }
+  .quote {
+    width: 55ch;
+  }
+
+  .evening {
+    background-image: url("../public/assets/tablet/bg-image-nighttime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .morning {
+    background-image: url("../public/assets/tablet/bg-image-daytime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .heading_3 {
+    font-size: 1.8rem;
+    letter-spacing: 3.6px;
+  }
+  .heading_4 {
+    font-size: 1.8rem;
+    letter-spacing: 3.6px;
+  }
+  .heading_6 {
+    font-size: 1.3rem;
+    letter-spacing: 2.6px;
+  }
+  .up-container {
+    padding-inline: 6.4rem;
+  }
   .clock-container {
     flex-direction: column;
     align-items: start;
     gap: 8rem;
+  }
+  .expand-container {
+    justify-content: center;
+    padding-inline: 6.4rem;
+  }
+  .expand-left,
+  .expand-right {
+    padding-inline: 6.4rem;
+  }
+
+  .timezone {
+    font-size: 3.2rem;
+  }
+  .btn-more {
+    width: 14.6rem;
+    height: 5.6rem;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  body {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+  }
+  .greetings span {
+    display: none;
+  }
+
+  .up-container {
+    padding-inline: 2.8rem;
+  }
+  .heading_1 {
+    font-size: 9rem;
+    line-height: 9rem;
+    letter-spacing: -0.25rem;
+  }
+  .heading_2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  .heading_3 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+  .heading_4 {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 3px;
+  }
+  .heading_6 {
+    font-size: 1rem;
+    letter-spacing: 2.8px;
+    letter-spacing: 2px;
+  }
+
+  .quote {
+    width: 40ch;
+  }
+  .quote-list {
+    gap: 1.4rem;
+  }
+
+  .timezone {
+    font-size: 1.5rem;
+  }
+
+  .btn-more {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    letter-spacing: 3.75px;
+    width: 14rem;
+    height: 5rem;
+  }
+  .expand-container {
+    padding-block: 8rem;
+    padding-inline: 2.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 1.6rem;
+  }
+  .expand-left,
+  .expand-right {
+    width: 100%;
+    gap: 1.6rem;
+    padding-inline: 0px;
+  }
+
+  .expand-item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .evening {
+    background-image: url("../public/assets/mobile/bg-image-nighttime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .morning {
+    background-image: url("../public/assets/mobile/bg-image-daytime.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
