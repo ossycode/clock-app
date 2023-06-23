@@ -5,8 +5,6 @@ import ExpandView from "./components/ExpandView";
 import { useState } from "react";
 import { useData } from "./useData";
 
-// const IP_URL = "http://worldtimeapi.org/api/ip";
-
 export default function App() {
   const [moreLess, setMoreLess] = useState(true);
   const [location, data] = useData("http://worldtimeapi.org/api/ip");

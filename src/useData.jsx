@@ -4,6 +4,26 @@ export function useData(IP_URL) {
   const [clientip, setClientIp] = useState();
   const [location, setLocation] = useState({});
   const [data, setData] = useState({});
+  // useEffect(
+  //   function () {
+  //     async function getIP() {
+  //       try {
+  //         const res = await fetch(IP_URL);
+  //         if (!res.ok) throw new Error("Something went wrong");
+
+  //         const data = await res.json();
+
+  //         setData(data);
+  //         setClientIp(data.client_ip);
+  //       } catch (err) {
+  //         console.error(err.meessage);
+  //       }
+  //     }
+  //     getIP();
+  //   },
+  //   [IP_URL]
+  // );
+
   useEffect(
     function () {
       async function getIP() {
@@ -20,11 +40,6 @@ export function useData(IP_URL) {
         }
       }
       getIP();
-    },
-    [IP_URL]
-  );
-  useEffect(
-    function () {
       async function getLocation() {
         try {
           if (!clientip) return;
@@ -44,7 +59,7 @@ export function useData(IP_URL) {
       }
       getLocation();
     },
-    [clientip]
+    [clientip, IP_URL]
   );
   return [location, data];
 }
