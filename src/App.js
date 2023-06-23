@@ -7,7 +7,7 @@ import { useData } from "./useData";
 
 export default function App() {
   const [moreLess, setMoreLess] = useState(true);
-  const [location, data] = useData("http://worldtimeapi.org/api/ip");
+  const [location, data] = useData("https://worldtimeapi.org/api/ip");
 
   const {
     abbreviation,
