@@ -15,7 +15,6 @@ export default function ExpandView({
               ? "expand-container expand-night"
               : "expand-container expand-day"
           }
-          role="tabpanel"
         >
           <div className="expand-left">
             <div className="expand-item">

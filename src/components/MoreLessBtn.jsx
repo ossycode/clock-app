@@ -1,10 +1,6 @@
 export default function MoreLessBtn({ moreLess, setMoreLess }) {
   return (
-    <button
-      className="btn-more"
-      onClick={() => setMoreLess((c) => !c)}
-      role="tab"
-    >
+    <button className="btn-more" onClick={() => setMoreLess((c) => !c)}>
       {moreLess ? "more" : "less"}
       {moreLess ? (
         <svg
